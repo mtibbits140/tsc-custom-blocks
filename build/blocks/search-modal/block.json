@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tsc/search-modal",
+  "title": "Search Modal",
+  "category": "widgets",
+  "description": "Adds a search modal.",
+  "keywords": [
+    "search modal"
+  ],
+  "version": "1",
+  "textdomain": "tsc",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "script": "",
+  "style": "file:./index.css",
+  "attributes": {
+    "textColor": {
+      "type": "string",
+      "default": "#222"
+    },
+    "modalBgColor": {
+      "type": "string",
+      "default": "#111"
+    },
+    "buttonBgColor": {
+      "type": "string",
+      "default": "#2563eb"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "triggerLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "triggerMediaId": {
+      "type": "number",
+      "default": 0
+    },
+    "triggerMediaUrl": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

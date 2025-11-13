@@ -1,0 +1,26 @@
+# Node / package managers
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnp.*
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build artifacts
+# We commit build/blocks for Option A, but ignore sourcemaps to keep diffs small
+*.map
+
+# Distribution outputs
+dist/
+*.zip
+
+# Project scaffolding not needed in repo
+00-block-template/
+
+# Misc caches
+.eslintcache
+coverage/
