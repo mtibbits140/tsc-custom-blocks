@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tsc/accordion",
+  "title": "Accordion",
+  "category": "tibbitswp",
+  "icon": "menu",
+  "description": "Accordion list container",
+  "keywords": [
+    "accordion",
+    "faq",
+    "definition list"
+  ],
+  "supports": {
+    "anchor": false,
+    "align": false,
+    "html": false,
+    "reusable": false,
+    "color": {
+      "text": false,
+      "background": false,
+      "link": false
+    }
+  },
+  "providesContext": {
+    "tsc/accordionHeadingLevel": "headingLevel"
+  },
+  "attributes": {
+    "headingLevel": {
+      "type": "number",
+      "default": 3
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./index.css",
+  "viewScript": "file:./view.js"
+}

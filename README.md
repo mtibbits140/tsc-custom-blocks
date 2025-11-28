@@ -6,6 +6,7 @@ A small plugin that provides Gutenberg blocks for adding search UI to your site.
 
 - Search Modal (`tsc/search-modal`)
 - Search Form (`tsc/search-form`)
+- Accordion (`tsc/accordion` and `tsc/accordion-item`)
 
 ## Search Modal
 
@@ -43,6 +44,17 @@ Features
 Use cases
 - For always-visible search (e.g., in a sidebar or footer), use this block.
 - For a compact trigger-in-header + overlay experience, use the Search Modal block.
+
+## Accordion
+
+Add an accordion block to WordPress. Handy for FAQs and other interactive content.
+
+Features
+- Allows setting the level of heading tag to use in the title (H2–H6).
+- Can specify the heading colour if it needs to be different from the theme's default heading colour.
+- Can specify the icon color for the "open" and "close" icons.
+- Accordion content can be any Gutenberg content blocks including paragraphs, lists, images, etc. Colours and styles can be set on these "child" blocks as you would anywhere in Gutenberg.
+- Controls for heading and content background colors and borders (independent backgrounds for title and panel).
 
 ## Installation (development)
 

@@ -52,6 +52,7 @@ define( 'UP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 include( UP_PLUGIN_DIR . 'includes/register_blocks.php' );
 include( UP_PLUGIN_DIR . 'includes/blocks/search-form.php' );
 include( UP_PLUGIN_DIR . 'includes/blocks/search-modal.php' );
+// Accordion now static: no PHP render file required
 
 // Hooks
 add_action( 'init', 'up_register_blocks' );

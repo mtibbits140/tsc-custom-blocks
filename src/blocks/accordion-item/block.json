@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tsc/accordion-item",
+  "title": "Accordion Item",
+  "parent": ["tsc/accordion"],
+  "category": "tibbitswp",
+  "icon": "index-card",
+  "description": "Accordion item with title and content",
+  "supports": {
+    "reusable": false,
+    "html": false
+  },
+  "usesContext": ["tsc/accordionHeadingLevel"],
+  "attributes": {
+    "title": { "type": "string", "default": "" },
+  "isActive": { "type": "boolean", "default": true },
+    "uniqueId": { "type": "string", "default": "" },
+    "headingLevel": { "type": "number", "default": 3 },
+    "titleColor": { "type": "string", "default": "" },
+    "itemBgColor": { "type": "string", "default": "" },
+    "panelBgColor": { "type": "string", "default": "" },
+    "iconColor": { "type": "string", "default": "" },
+    "borderColor": { "type": "string", "default": "" },
+    "borderTopWidth": { "type": "string", "default": "" },
+    "borderBottomWidth": { "type": "string", "default": "" }
+  },
+  "editorScript": "file:./index.js"
+}

@@ -1,0 +1,72 @@
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/blocks/accordion/main.css ***!
+  \***********************************************************************************************************************************************************************************/
+/* Accordion Block styles */
+
+.tsc-accordion-list-block {
+  /* margin: var(--section-margin) 0 !important; */
+}
+
+.tsc-accordion-list-block dt {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;  
+  transition: ease-in 0.3s;
+}
+
+.tsc-accordion-list-block dt:first-of-type {
+  margin-top: 0;
+}
+
+/* Explicit header/panel class hooks */
+.tsc-accordion-list-block dt.accordion-header { cursor: pointer; }
+.tsc-accordion-list-block dd.accordion-panel { display: none; }
+.tsc-accordion-list-block dt.accordion-header.is-active + dd.accordion-panel { display: flex; }
+
+.tsc-accordion-list-block dd {
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.tsc-accordion-list-block dd * {
+  margin: 0;
+}
+
+
+
+/* If using the newer card style, uncomment and adjust as needed*/
+/*
+.tsc-accordion-list-block dt {  
+  border: none !important;
+  border-radius: 10px;  
+  box-shadow: 0 4px 4px rgba(0,0,0,.25);
+  transition: none;
+}
+.tsc-accordion-list-block dt.is-active {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tsc-accordion-list-block dt:not(:first-of-type) { 
+  margin-top: 1rem; 
+}
+
+.tsc-accordion-list-block dd {
+  border: none !important;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+
+.tsc-accordion-list-block dt.is-active + dd { display: block !important; }
+.tsc-accordion-list-block dd p { font-size: 1.125rem; }
+.tsc-accordion-list-block dd p:last-child { margin-bottom: 0; }
+*/
+
+
+/*# sourceMappingURL=index.css.map*/

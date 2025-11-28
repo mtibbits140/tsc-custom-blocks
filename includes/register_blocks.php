@@ -11,6 +11,9 @@
                 'render_callback' => 'tsc_search_modal_render_cb'
                 ] 
             ],
+            [ 'name' => 'accordion' ],
+            // Child block static saved with parent wrapper
+            [ 'name' => 'accordion-item' ],
         ];
 
         foreach ( $blocks as $block ) {
