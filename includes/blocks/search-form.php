@@ -3,6 +3,7 @@
     function tsc_search_form_render_cb($attributes) {
         $bgColor = esc_attr($attributes['bgColor']);
         $textColor = esc_attr($attributes['textColor']);
+        $postType = isset($attributes['postType']) ? sanitize_key($attributes['postType']) : '';
         $styleAttributes = "background-color: $bgColor; color: $textColor;";
         ob_start();
         ?>
@@ -13,6 +14,9 @@
             </h3>
             <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
               <input type="text" placeholder="<?php esc_html_e( 'Search', 'tsc' ); ?>" name="s" value="<?php the_search_query(); ?>" />
+              <?php if ( ! empty( $postType ) ) : ?>
+                <input type="hidden" name="post_type" value="<?php echo esc_attr( $postType ); ?>" />
+              <?php endif; ?>
               <div class="btn-wrapper">
                 <button type="submit" style="<?php echo $styleAttributes; ?>"><?php esc_html_e( 'Search', 'tsc' ); ?></button>
               </div>

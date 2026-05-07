@@ -43,7 +43,7 @@
     // Inject a close button into the portaled wrapper if not present
     if (!$wrapper.data('tscCloseBtn')) {
       var $btn = $('<button type="button" class="search-icon-button close-icon" aria-label="Close search"></button>');
-      $btn.append('<svg class="icon-close" width="32" height="32" viewBox="0 0 24 24" fill="#fff" role="img" aria-hidden="true"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" /></svg>');
+        $btn.append('<svg class="icon-close" width="32" height="32" viewBox="0 0 24 24" role="img" aria-hidden="true" style="color:#fff"><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="6" y1="18" x2="18" y2="6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>');
       $wrapper.append($btn);
       $wrapper.data('tscCloseBtn', $btn);
     }        
@@ -52,13 +52,17 @@
   }
 
   function restoreForm($block) {
+    // Use the currently portaled wrapper reference and its stored placeholder
     var $wrapper = $('body').find('#search-form-wrapper');
     if (!$wrapper.length) return;
-    var $placeholder = $block.find('.tsc-search-form-placeholder');
-    if ($placeholder.length) {
+    var $placeholder = $wrapper.data('tscPlaceholder');
+    if ($placeholder && $placeholder.length) {
+      // Move the wrapper back to the block and remove the placeholder
       $wrapper.insertBefore($placeholder);
       $placeholder.remove();
-      $block.find('#search-form-wrapper').css({
+
+      // Reset inline styles directly on the wrapper we just moved
+      $wrapper.css({
         position: '',
         top: '',
         left: '',
@@ -68,12 +72,17 @@
         zIndex: '',
         display: ''
       });
+
       // Clear copied CSS vars
       var vars = ['--tsc-search-modal-bg','--tsc-search-button-bg','--tsc-search-button-text','--tsc-search-text','--tsc-search-placeholder'];
       vars.forEach(function(v){
-        $block.find('#search-form-wrapper').get(0).style.removeProperty(v);
+        $wrapper.get(0).style.removeProperty(v);
       });
-      $block.find('#search-form-wrapper').removeClass('tsc-search-modal-portal');
+
+      // Cleanup state classes and data
+      $wrapper.removeClass('tsc-search-modal-portal');
+      $wrapper.removeData('tscBlock');
+      $wrapper.removeData('tscPlaceholder');
     }
   }
 
@@ -110,6 +119,19 @@
       $('html').removeClass('overlay');
       $block.removeClass('show');
       restoreForm($block);
+    }
+  });
+
+  // Also close on Escape key for robustness
+  $(document).on('keydown', function(e){
+    if (e.key === 'Escape') {
+      var $wrapper = $('#search-form-wrapper');
+      var $block = $wrapper.data('tscBlock');
+      if ($block && $block.length) {
+        $('html').removeClass('overlay');
+        $block.removeClass('show');
+        restoreForm($block);
+      }
     }
   });
 })(jQuery);

@@ -20,6 +20,10 @@
     "textColor": {
       "type": "string",
       "default": "#fff"
-    } 
+    },
+    "postType": {
+      "type": "string",
+      "default": ""
+    }
   }
 }
